@@ -30,3 +30,6 @@ friends = {
             },
         },
 }
+print(max([data["age"] for people, data in friends.items()]))
+print(len([data["relation"] for people, data in friends.items()])/sum([len(relatives) for relatives in [data["relation"] for people, data in friends.items()]]))
+print(max([data["age"] for people, data in friends.items()if len(data["relation"]) > 1]))
