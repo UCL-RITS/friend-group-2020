@@ -46,3 +46,8 @@ print("The average (mean) number of relations among members of the group:", mean
 # the maximum age of people in the group that have at least one relation
 print("The maximum age of people in the group that have at least one relation is",
         max({name['age'] for group, name in group.items() if len(name['relations']) > 0 }))
+
+# the maximum age of people in the group that have at least one friend (indent for readability)
+print ("The maximum age of people in the group that have at least one friend is",
+        max({name['age'] for group, name in group.items() for relation_name, relation_relation in name['relations'].items() 
+        if 'friend' is (relation_relation)}))
