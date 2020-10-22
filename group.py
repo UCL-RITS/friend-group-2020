@@ -2,4 +2,5 @@
 
 # Your code to go here...
 
-my_group =
+my_group =room 30
+group members are  Yohn and Yewen
