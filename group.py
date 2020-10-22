@@ -6,7 +6,7 @@ my_group = { "Jill" : { "Age": 26, "Job": ["Biologist"], "Connections": [{"Zalik
 
 },
 
-"Zalika" : { "Age": 28, "Job": ["Artist"], "Connections": [{"Jill" : "Friend"}, "Nash": "Tenant"]
+"Zalika" : { "Age": 28, "Job": ["Artist"], "Connections": [{"Jill" : "Friend", "Nash": "Tenant"]]
 },
 
 "John" : { "Age": 27, "Job": ["Writer"], "Connections": [{"Jill" : "Partner", "Nash": "Cousin"}]
@@ -16,4 +16,3 @@ my_group = { "Jill" : { "Age": 26, "Job": ["Biologist"], "Connections": [{"Zalik
 }
 
 }
-
