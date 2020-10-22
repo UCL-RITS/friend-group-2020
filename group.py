@@ -7,6 +7,7 @@ my_group = {'Jill':{'Age':26,'Job':'biologist','Relationship':{'Zalika':'friend'
 'John':{'Age':27,'Job':'writer','Relationship':{'Jill':'partner'}},
 'Nash':{'Age':34,'Job':'chef','Relationship':{'John':'cousin','Zalika':'landlord'}}}
 
+#stores all information except name
 groupArray = []
 
 for allInfo in my_group.values():
