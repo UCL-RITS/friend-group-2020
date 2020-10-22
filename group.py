@@ -2,4 +2,14 @@
 
 # Your code to go here...
 
-my_group =
+#my_group ={}
+a = [{"name": "Jill", "age": 26,
+      "job": "Biologist", "relation": {"friend": "Zalika", "partner": "John"}},
+     {"name": "Zalika", "age": 28,
+      "job": " artist", "relation": "Jill's friend"},
+     {"name": "John", "age": 27,
+      "job": " writer", "relation": "Jill's partner"},
+     {"name": "Nash", "age": 34,
+      "job": " chef", "relation": "John's cousin and Zalika's landlord"}
+     ]
+print(a)
