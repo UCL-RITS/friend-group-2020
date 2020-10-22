@@ -21,7 +21,7 @@ my_group = [{
 		"name":"Nash",
 		"age":34,
 		"occupancy":"chef",
-		"relationships":{"cousin":"John", "landlord":"Zalika"}
+		"relationships":{"cousin":"John", "tenant":"Zalika"}
 	}]
 
 
