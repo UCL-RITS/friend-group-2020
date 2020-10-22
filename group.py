@@ -24,8 +24,14 @@ example_group = [jill, zalika, john, nash]
 
 weixi = {"name": "Weixi Zhang", "age": 20,
         "job": "student"}
+
+pingchuan = {"name": "Pingchuan Jiang", "age": 22,
+        "job": "student"}
+
+pingchuan["friend"] = weixi
+weixi["friend"] = pingchuan
 # aaa = ...
-my_group = [weixi] #, aaa
+my_group = [weixi, pingchuan] #, aaa
 
 print(my_group[2]["job"])
 
