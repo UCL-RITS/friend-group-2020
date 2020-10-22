@@ -35,3 +35,10 @@ group = {
     }
 }
 
+# maximum age
+print("The maximum age of the people in the group is:", max({room['age']for name, room in group.items()}))
+
+
+
+
+
