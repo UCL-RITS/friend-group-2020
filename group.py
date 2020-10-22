@@ -10,10 +10,9 @@ class Relation(Enum):
      COUSIN = 4
 
 
-# Store data as a list of dict's
-my_group = [
-                {
-                    'id': 1,
+# Store data as a dict of dict's, where the key is the ID of the user which is used in relations
+my_group = {
+                1: {
                     'name': 'Jill',
                     'job': 'Biologist',
                     'age': 26,
@@ -22,8 +21,7 @@ my_group = [
                         {'to': 3, 'type': Relation.PARTNER}
                     ]
                 },
-                {
-                    'id': 2,
+                2: {
                     'name': 'Zalika',
                     'job': 'Artist',
                     'age': 28,
@@ -31,16 +29,14 @@ my_group = [
                         {'to': 1, 'type': Relation.FRIEND}
                     ]
                 },
-                {
-                    'id': 3,
+                3: {
                     'name':'John',
                     'job': 'Writer',
                     'age': 27,
                     'relations': [
                         {'to': 1, 'type': Relation.PARTNER}
                     ]},
-                {
-                    'id': 4,
+                4: {
                     'name': 'Nash',
                     'job': 'Chef',
                     'age': 34,
@@ -49,4 +45,4 @@ my_group = [
                         {'to': 2, 'type': Relation.LANDLORD}
                     ]
                 },
-            ]
+        }
