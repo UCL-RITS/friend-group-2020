@@ -46,3 +46,21 @@ my_group = {
                     ]
                 },
         }
+
+
+# Block of code that extracts the maximum age in the group
+group_ages = [value['age'] for value in my_group.values()]
+print("the maximum age of people in the group is:", max(group_ages))
+
+# Block of code that calculates the average of connections
+# Follow quite similar approach as before with the difference that now we need the average
+group_connections = [len(value['relations']) for value in my_group.values()]
+print("Every person in the group has an average of", sum(group_connections)/len(group_connections),"relations")
+
+# Block of code that extracts the maximum age in the group
+group_ages = [value['age'] for value in my_group.values() if len(value['relations']) > 0]
+print("the maximum age of people in the group that have at least one relation is :", max(group_ages))
+
+# Block of code that extracts the maximum age of people in the group that have at least one friend
+group_ages = [value['age'] for value in my_group.values() for relation_value in value['relations'] if relation_value['type'] == Relation.FRIEND]
+print("the maximum age of people in the group that have at least one relation is :", max(group_ages))
