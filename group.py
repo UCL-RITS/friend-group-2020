@@ -3,8 +3,33 @@
 # - John is 27, a writer, and Jill's partner.
 # - Nash is 34, a chef, John's cousin and Zalika's landlord.
 
-group_dict=[{'name':'Jill','age':26,'job':'biologist','connection':{'Zalika':'friend','John':'partner'}},
-            {'name':'Zalika','age':28,'job':'artist','connection':{'Jill':'friend'}},
-            {'name':'John','age':27,'job':'writer','connection':{'Jill':'partner'}},
-            {'name':'Nash','age':34,'job':'chef','connection':{'John':'cousin','Zalika':'landlord'}}]
+group_dict={'Jill': {'age':26,'job':'biologist','connection':{'Zalika':'friend','John':'partner'}},
+            'Zalika':{'age':28,'job':'artist','connection':{'Jill':'friend'}},
+            'John':{'age':27,'job':'writer','connection':{'Jill':'partner'}},
+            'Nash':{'age':34,'job':'chef','connection':{'John':'cousin','Zalika':'landlord'}}}
 
+def main():
+
+    # Collect data
+    data = group_dict.values()
+
+    # 1. Calculate maximum age in the group
+    maximum_age = max([x['age'] for x in data])
+    print('The maximum age in group_dict is :', maximum_age)
+
+    # 2. Average number of relations in the group
+    import numpy as np
+    av_connections = np.mean([len(x['connection']) for x in data])
+    print('The average number of connections in group_dict is :', av_connections)
+
+    #3. The maximum age of people with at least one relation
+    maximum_age = max([x['age'] for x in data if len(x['connection']) >= 1])
+    print('The maximum age of people in group_dict with at least one connection is :', maximum_age)
+
+    #4. The maximum age of people in the group that have at least one friend
+    maximum_age = max([x['age'] for x in data if len([connection for connection in x['connection'].values() if connection=='friend']) >=1 ])
+    print('The maximum age of people in group_dict with at least one friend is :', maximum_age)
+
+
+if __name__ == "__main__":
+    main()
