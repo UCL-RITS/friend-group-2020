@@ -2,9 +2,35 @@
 
 # Your code to go here...
 
-my_group = [
-    {'id': 1, 'name': 'Jill', 'job': 'Biologist', 'age': 26, 'relations': [{'to': 2, 'type': 'Friend'}, {'to': 3, 'type': 'Partner'}]},
-    {'id': 2, 'name': 'Zalika', 'job': 'Artist', 'age': 28, 'relations': [{'to': 1, 'type': 'Friend'}]},
-    {'id': 3, 'name': 'John', 'job': 'Writer', 'age': 27, 'relations': [{'to': 1, 'type': 'Partner'}]},
-    {'id': 4, 'name': 'Nash', 'job': 'Chef', 'age': 34, 'relations': [{'to': 3, 'type': 'Cousin'}, {'to': 2, 'type': 'Landlord'}]},
-]
+my_group = my_group = {
+    "Jill": {
+        "age": 26,
+        "job": "biologist",
+        "relations": {
+            "Zalika": "friend",
+            "John": "partner"
+        }
+    },
+    "Zalika": {
+        "age": 28,
+        "job": "artist",
+        "relations": {
+            "Jill": "friend"
+        }
+    },
+    "John": {
+        "age": 27,
+        "job": "writer",
+        "relations": {
+            "Jill": "partner"
+        }
+    },
+    "Nash": {
+        "age": 34,
+        "job": "chef",
+        "relations": {
+            "John": "cousin",
+            "Zalika": "landlord"
+        }
+    }
+}
