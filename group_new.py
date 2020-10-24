@@ -34,15 +34,16 @@ group = {
 }
 
 
-
+# create file and write
 with open('group_file.json', 'w') as f:
     json.dump(group, f, indent=4)
 
-
+# read file and load
 with open('group_file.json', 'r') as json_file:
     my_group = json_file.read()
 
+mydata = json.loads(my_group)
 
-print(my_group)
+print(mydata)
 
 
