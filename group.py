@@ -1,3 +1,6 @@
+
+import json
+
 """An example of how to represent a group of acquaintances in Python."""
 
 my_group = {
@@ -64,3 +67,21 @@ print(
     f"the oldest person with relations is {oldest_person_with_relations(my_group)} years old")
 print(
     f"the oldest person with friends is {oldest_person_with_friends(my_group)} years old")
+
+
+print(json.dumps(my_group, indent=4))
+
+
+# writing
+with open('my_group.json', 'w') as json_file:
+    json.dump(my_group, json_file, indent=2)
+
+
+with open('my_group.json', 'r') as json_file:
+    my_group_string = json_file.read()
+
+print(f'Original format:\n{my_group}')
+
+my_group = json.loads(my_group_string)
+
+print(f'\nCurrent format:\n{my_group}')
