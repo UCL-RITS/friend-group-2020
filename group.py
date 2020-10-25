@@ -34,4 +34,17 @@ group = {
         }
     }
 }
-print(group["John"]["relations"])
+#print(group["John"]["relations"])
+
+
+# maximum age
+print(max([group[key]['age'] for key in group]))
+
+# average number of relations
+print(sum([len(group[key]['relations']) for key in group])/ len(group))
+
+# maximum age of people that have at least one relation
+print(max([group[key]['age'] for key in group if group[key]['relations']]))
+
+# maximum age of people that have at least one friend
+print(max([group[key]['age'] for key in group if group[key]['relations'] if 'friend' in group[key]['relations'].values()]))
