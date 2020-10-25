@@ -8,8 +8,24 @@ group_dict={'Jill': {'age':26,'job':'biologist','connection':{'Zalika':'friend',
             'John':{'age':27,'job':'writer','connection':{'Jill':'partner'}},
             'Nash':{'age':34,'job':'chef','connection':{'John':'cousin','Zalika':'landlord'}}}
 
-def main():
 
+def load_yaml(filepath):
+    # Prints yaml data from file provided
+    import yaml
+
+    with open(filepath, 'r') as myfile:
+        data = yaml.safe_load(myfile)
+        print(data)   
+
+
+def save_yaml(mydict, filepath):
+    # Saves dictionary data to yaml file in location specified
+    import yaml 
+
+    with open(filepath, 'w') as myfile:
+        yaml.dump(mydict, myfile)
+
+def main():
     # Collect data
     data = group_dict.values()
 
@@ -31,5 +47,10 @@ def main():
     print('The maximum age of people in group_dict with at least one friend is :', maximum_age)
 
 
+
 if __name__ == "__main__":
-    main()
+    print(group_dict)
+    save_yaml(group_dict, './groupdict.yaml')
+    print('Saving dictionary data ... ')
+    print('Loading dictionary data ..')
+    load_yaml('./groupdict.yaml')
