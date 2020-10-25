@@ -35,6 +35,12 @@ class Person:
         for pair in args:
             self.relations[pair[0]] = pair[1]
 
+    def relations_str(self):
+        """
+        Returns relations dicitonary but with the key being the name as a str instead of a Person object
+        """
+        return { pair[0].name : pair[1] for pair in self.relations.items() }
+
     def print_rels(self):
         """
         Prints this persons relations in format: name (age, job) -- relationship
@@ -72,3 +78,11 @@ print('Maximum age of people with at least one relation = ' + str(max_age_min1re
 # Maximum age for ppl with at least one friend
 max_age_min1friend = max([ person.age for person in my_group if 'friend' in person.relations.values() ])
 print('Maximim age of people with at least one friend = ' + str(max_age_min1friend))
+
+my_group_dict = { person.name : {'age' : person.age, 'job': person.job, 'relations' : person.relations_str()} for person in my_group } 
+
+import json
+
+with open('my_group_dict.json', 'w') as file:
+    json.dump(my_group_dict, file, indent=4)
+
