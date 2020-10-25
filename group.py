@@ -51,3 +51,13 @@ print("The maximum age of people in the group that have at least one relation is
 print ("The maximum age of people in the group that have at least one friend is",
         max({name['age'] for group, name in group.items() for relation_name, relation_relation in name['relations'].items() 
         if 'friend' is (relation_relation)}))
+
+
+# writing to a YAML file
+import yaml
+with open('group.yaml', 'w') as yaml_group_out:
+    yaml_group_out.write(yaml.dump(group))
+
+# makng sure the file can be read
+with open('group.yaml') as yaml_group_in:
+    group_again = yaml.safe_load(yaml_group_in)
