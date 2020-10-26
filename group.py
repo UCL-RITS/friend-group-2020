@@ -3,6 +3,7 @@
 # Your code to go here...
 
 import numpy as np
+import json
 
 my_group = [{
 	     	"name":"Jill", 
@@ -51,3 +52,16 @@ for dict in my_group:
 	if "friends" in dict["relationships"].keys(): # Checking for the existence of the key
 		ages_withFriends.append(dict["age"])
 print(f"The maximum age in the group among members /w friends is {max(ages_withFriends)}")
+
+print()
+
+# save the data as .json file
+with open('group_data.json', 'w') as file_to_write:
+    json.dump(my_group, file_to_write)
+
+# read the .json file and print the data out to check if it was read correctly
+with open('group_data.json', 'r') as file_to_read:
+    read_test_data_string = file_to_read.read() # reads the .json file and saves is as a *one line string*
+
+read_test_data = json.loads(read_test_data_string) # makes the data more readable for printing
+print(json.dumps(read_test_data, indent=4))
