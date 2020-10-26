@@ -73,6 +73,13 @@ group = {
     }
 }
 
+import json
+
+
+def save_file(group):
+    with open('group.json', 'w') as json_group_out:
+        json_group_out.write(json.dumps(group))
+
 
 # max age of people in the group
 def age_list(group):
@@ -141,6 +148,7 @@ def age_friend(group):
 
 
 def main(group):
+    save_file(group)
     maximum_age = max_age(group)
     mean_relations = relations_mean(group)
     max_age_more_1 = max_age_above1_relation(group)
