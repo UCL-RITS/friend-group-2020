@@ -4,11 +4,11 @@ import numpy as np
 """An example of how to represent a group of acquaintances in Python."""
 
 # Make a enum storing possible relation types and an ID for that relationship type
-class Relation(Enum):
-     PARTNER = 1
-     FRIEND = 2
-     LANDLORD = 3
-     COUSIN = 4
+class Relation(str, Enum):
+     PARTNER = "Partner"
+     FRIEND = "Friend"
+     LANDLORD = "Landlord"
+     COUSIN = "Cousin"
 
 # Store data as a dict of dict's, where the key is the ID of the user which is used in relations
 my_group = {
@@ -77,3 +77,29 @@ print("Maximum age people in the group that have at least one friend (for loop):
 ages = [friend['age'] for friend in my_group.values() if [relation['type'] for relation in friend['relations']].count(Relation.FRIEND) >= 1]
 # Print maximum and average
 print("Maximum age people in the group that have at least one friend (list comprehension): ", np.max(ages))
+
+# Save the friend data to a JSON file
+import json
+
+# Make the JSON file and write data
+with open('friend_group.json', 'w') as file:
+    json.dump(my_group, file, indent=4)
+
+# Read JSON file into a string
+with open('friend_group.json', 'r') as file:
+    loaded_group = file.read()
+
+# Parse the JSON string
+loaded_friend_group = json.loads(loaded_group)
+
+# Now convert the string relation types back into relation enum members
+for friend in loaded_friend_group.values():
+    for relation in friend['relations']:
+        relation['type'] = Relation(relation['type'])
+
+# Also, json.loads converts our integer IDs for each user into strings
+# So let's convert them back into integers
+for friend in list(loaded_friend_group):
+    loaded_friend_group[int(friend)] = loaded_friend_group.pop(friend)
+
+print("Did loaded friend group equal original group? ", my_group == loaded_friend_group)
