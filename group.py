@@ -1,5 +1,4 @@
-"""An example of how to represent a group of acquaintances in Python."""
-
+import json
 # Your code to go here...
 
 my_group = { "Jill" : { "Age": 26, "Job": ["Biologist"], "Connections": [{"Zalika" : "Friend", "John": "Partner"}] 
@@ -40,3 +39,17 @@ print("The maximum age (for people with at least one relation) is:", max(age_lis
 age_list3 = {friend: person["Age"] for friend, person in my_group.items() if "Friend" in my_group[friend]["Connections"][0].values()} #dictionary of people with at least one friend
 print("Group members with at least one friend, and their respecive ages", age_list3)
 print("The maximum age (for people with at least one friend) is:", max(age_list3.values())) #Retrieve the maximum age
+
+
+# Code below is dedicated to outputting the 'my_group' dictionary to an external json file
+
+# create and write to the json file
+with open("group_data.json", "w") as output:
+    json.dump(my_group, output, indent=4)
+
+# open and read from the json file
+with open("group_data.json", "r") as input:
+    data = json.load(input)
+    print(data)
+
+    
