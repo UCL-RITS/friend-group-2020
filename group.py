@@ -92,3 +92,25 @@ ages_wfriends = []
 [ages_wfriends.append(member['age']) for member_name, member in group.items() if ('friend' in member['relations'].values())]
 print('Maximum age of people w/at least one friend: ', max(ages_wfriends))
 
+""" Working with JSON files """ 
+import json 
+
+# Writing group dictionary to json file format 
+with open('group.json', 'w') as json_file:
+
+    #Writes dictionary group into json format to be placed inside file : ie string 
+    json_format = json.dumps(group, indent = 3)
+
+    #Writes json formatted text to the json file
+    json_file.write(json_format)
+
+#Reading json file
+with open('group.json', 'r') as json_file_read:
+    string_data = json_file_read.read()
+print(string_data)
+
+# Turning the read data into json format 
+group_read = json.loads(string_data)
+
+#Access jill contents 
+print(group_read['Jill'])
