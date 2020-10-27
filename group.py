@@ -87,3 +87,8 @@ ages_1relation = []
 print("Max age of people in the group that have at least one relation: ", max(ages_1relation))
 
 #4. Maximum age of people in the group that have at least one friend 
+print('friend' in group['Jill']['relations'].values()) #Test if friend is in relations.values
+ages_wfriends = [] 
+[ages_wfriends.append(member['age']) for member_name, member in group.items() if ('friend' in member['relations'].values())]
+print('Maximum age of people w/at least one friend: ', max(ages_wfriends))
+
