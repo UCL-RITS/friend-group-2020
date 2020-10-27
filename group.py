@@ -2,7 +2,7 @@
 
 # Your code to go here...
 
-my_group = group = {
+my_group = {
     "Jill": {
         "age": 26,
         "job": "biologist",
