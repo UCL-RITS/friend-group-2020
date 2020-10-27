@@ -1,7 +1,7 @@
 """An example of how to represent a group of acquaintances in Python."""
 
-""" 
 # ATTEMPT 1:  USING CLASSES BUT IT GOT TOO COMPLICATED WITH SELF 
+""" 
 #Clearing out variables 
 jill = []
 zalika = []
@@ -32,7 +32,7 @@ zalika.add_connection(jill, 'friend')
 print("Zalika's connection: ", zalika.connection)
 """
 
-# Attempt 2: Using dictionary of dictionaries 
+# ATTEMPT 2: Using dictionary of dictionaries 
 
 group = {
     "Jill": {
@@ -67,3 +67,23 @@ group = {
     }
 }
 
+#Unpacking things in nested dictionary of dictionaries : member name is string, member is actual dictionary value with its items
+[print(member['age']) for member_name, member in group.items()]
+
+# 1. Max age of people in the group 
+ages = []
+[ages.append(member['age']) for member_name, member in group.items()]
+print("Maximum age of group: ", max(ages))
+
+# 2. Average (mean) number of relations among members of the group 
+no_relations = []
+[no_relations.append(len(member['relations'])) for member_name, member in group.items()]
+avg_relations = sum(no_relations) / len(no_relations)
+print("Average number of relations: " , avg_relations)
+
+# 3. The maximum age of people in the group that have at least one relation 
+ages_1relation = []
+[ages_1relation.append(member['age']) for member_name, member in group.items() if len(member['relations']) > 0 ]
+print("Max age of people in the group that have at least one relation: ", max(ages_1relation))
+
+#4. Maximum age of people in the group that have at least one friend 
