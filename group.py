@@ -46,3 +46,12 @@ print('the average (mean) number of relations among members of the group: %.2f' 
 print('the maximum age of people in the group that have at least one relation: %d' %max(ages_with_rel))
 print('the maximum age of people in the group that have at least one friend: %d' %max(ages_with_fri)) 
 
+with open('group.json', 'w') as target:
+	target.write(str(my_group))
+
+with open('group.json', 'r') as target:
+	myfile = target.read()
+
+my_group_json = json.dumps(myfile)
+
+print(my_group_json)
