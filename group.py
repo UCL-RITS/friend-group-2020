@@ -45,3 +45,9 @@ print("The mean number of relations among members of the group is " + str(mean_r
 age_one_relation = [value['age'] for value in my_group.values() if len(value['relations']) >=1]
 max_age_one_relation = str(max(age_one_relation))
 print("The maximum age of people in the group that have at least one relation is " + max_age_one_relation)
+
+import json
+
+group_file = json.dumps(my_group, indent=4)
+
+print(group_file)
