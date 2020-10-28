@@ -1,6 +1,7 @@
 """An example of how to represent a group of acquaintances in Python."""
 
 import numpy as np
+import yaml
 
 my_group = {
 	"Jill" : {
@@ -44,3 +45,9 @@ print("Maximum age of friend in group with at least one relation = ", np.max(age
 
 agesWithFriends = [friend["Age"] for friend in my_group.values() if "friend" in friend["Connections"].values()]
 print("Maximum age of friend in group with at least one friend = ", np.max(agesWithFriends))
+
+with open('group.yaml', 'w') as yamlGroupFile:
+	yamlGroupWrite.write(yaml.dump(group))
+
+with open('group.yaml') as yamlGroupRead:
+	groupRead = yaml.safe_load(yamlGroupRead)
