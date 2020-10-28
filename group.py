@@ -34,3 +34,14 @@ my_group = {
         }
     }
 }
+
+max_age = (max([value["age"] for value in my_group.values()]))
+print("The maximum age of people in this group is " + str(max_age))
+
+len_relations = [len(value['relations']) for value in my_group.values()]
+mean_relations = (sum(len_relations)/len(len_relations))
+print("The mean number of relations among members of the group is " + str(mean_relations))
+
+age_one_relation = [value['age'] for value in my_group.values() if len(value['relations']) >=1]
+max_age_one_relation = str(max(age_one_relation))
+print("The maximum age of people in the group that have at least one relation is " + max_age_one_relation)
