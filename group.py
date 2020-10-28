@@ -1,6 +1,7 @@
 #An example of how to represent a group of acquaintances in Python."""
 
 # Your code to go here...
+import json
 
 my_group = {
     "Jill": {
@@ -44,3 +45,18 @@ print('the maximum age of people in the group: %d' %max(ages));
 print('the average (mean) number of relations among members of the group: %.2f' %(sum(ages)/len(ages)))
 print('the maximum age of people in the group that have at least one relation: %d' %max(ages_with_r))
 print('the maximum age of people in the group that have at least one friend: %d' %max(ages_with_f))
+
+
+
+
+#json r/w
+
+#write
+with open('group_data.json', 'w') as json_file:
+    json.dump(my_group, json_file,indent=4)
+
+# load
+with open('group_data.json', 'r') as json_file:
+    group_data = json_file.read()
+
+print(group_data)
