@@ -62,3 +62,16 @@ for person, data in group.items():
 print('Maximum age is', max_age ,' years, The name is', oldest)
 print('Maximum age with relation is', max_age_w_relation ,' years, The name is ', oldest_w_relation)
 print('Maximum age with friend is', max_age_w_friend ,' years, The name is ',oldest_w_friend)
+
+####################### Add commands to print a file ###################################
+
+import yaml
+with open('group_result.yaml','w') as output:
+    output.write(yaml.safe_dump(group))
+    
+####################### Add commands to read the printed file ###################################
+
+with open('group_result.yaml','r') as input:
+    re_read_group_data = yaml.safe_load(input)
+print(re_read_group_data)
+    
