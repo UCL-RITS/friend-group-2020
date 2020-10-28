@@ -1,0 +1,25 @@
+Emre:
+  age: 22
+  job: Mres
+  relations:
+    Kyriazis: Friend
+    Mathew: Friend
+    Michael: Friend
+Kyriazis:
+  age: 25
+  job: Msc Student
+  relations: !!set
+    Friend: null
+    Mathew: null
+Mathew:
+  age: 24
+  job: Phd Student
+  relations:
+    Kyriazis: Friend
+    Michael: Friend
+Michael:
+  age: 25
+  job: Phd Student
+  relations:
+    Kyriazis: Friend
+    Mathew: Friend

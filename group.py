@@ -1,3 +1,4 @@
+import yaml
 "An example of how to represent a group of acquaintances in Python."""
 
 # Your code to go here...
@@ -23,3 +24,10 @@ print(f"All relations of Emre {my_group['Emre']['relations']}")
 
 print(f"Relationship between Emre and Kyriazis {my_group['Emre']['relations']['Kyriazis']}")   
 
+with open('my_group.yaml', 'w') as yaml_group:
+    yaml_group.write(yaml.dump(my_group))
+
+# makng sure the file can be read
+with open('my_group.yaml') as yaml_group:
+    group_from_file = yaml.safe_load(yaml_group)
+print(group_from_file)
