@@ -70,3 +70,15 @@ print('The maximum age of people in the group that have at least one friend is',
 
 
 
+
+import json
+
+#write file
+with open('group_file.json', 'w') as json_file:
+	json.dumps(group, json_file, indent=4)
+
+#read file
+with open('group_file.json', 'r') as json_file:
+	group_data = json_file.read()
+
+
