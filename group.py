@@ -60,7 +60,7 @@ print("The maximum age of people in the group that have at least one friend is:"
 with open('my_group.json', 'r') as json_file:
     print(json.dump(my_group, json_file, indent=4))
 
-#Loading data
+#Loading Data
 with open('my_group.json', 'r') as json_file:
     my_group_as_string = json_file.read()
     print(my_group_as_string)
