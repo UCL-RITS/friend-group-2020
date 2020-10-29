@@ -1,4 +1,5 @@
 """An example of how to represent a group of acquaintances in Python."""
+import json
 
 my_group = {
     "Jill": {
@@ -77,3 +78,13 @@ for groupname,groupinfo in my_group.items():
     
 print('4- Maximum age of people in the group that have at least one friend is: ', end="")
 print(max(max_age_one_friend))
+
+#Reading and writing structured data files
+filename = 'my_group.json'
+with open(filename,'w') as f:
+    json.dump(my_group, f)
+
+with open(filename) as f:
+    group_info = json.load(f)
+
+print(group_info)
