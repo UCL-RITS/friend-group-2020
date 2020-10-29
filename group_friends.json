@@ -1,6 +1,4 @@
-import json
-
-group = {
+{
     "Jill": {
         "age": 26,
         "job": "biologist",
@@ -32,13 +30,3 @@ group = {
         }
     }
 }
-
-# write file
-with open('group_friends.json', 'w') as json_file:
-    json.dump(group, json_file, indent=4)
-
-
-with open('group_friends.json', 'r') as json_file:
-    group_friends = json_file.read()
-
-print(group_friends)
