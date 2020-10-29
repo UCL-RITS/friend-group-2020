@@ -3,7 +3,7 @@
 # Your code to go here...
 
 
-my_group = { "Jill" : {"age" : 26, "job" : "biologist", "connection" : ["Zalika", "John"]}, 
+my_group23 = { "Jill" : {"age" : 26, "job" : "biologist", "connection" : ["Zalika", "John"]}, 
 
             "Zaklika" : {"age" : 28, "job" : "artist", "connection" : ["Jill"]},
 
