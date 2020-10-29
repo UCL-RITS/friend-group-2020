@@ -55,3 +55,17 @@ for dict in my_group:
         Ages_friend.append(dict['age'])
 
 print("The maximum age of people in the group is",max(Ages_friend),"that have at least one friend")
+
+
+import json
+
+with open('my_group_data.json','w') as target:
+    json.dump(my_group, target)
+
+with open('my_group_data.json','r') as json_file:
+    my_group_data_as_string = json_file.read()
+
+mygroupdata = json.loads(my_group_data_as_string)
+print(json.dumps(mygroupdata,indent=4))
+
+
