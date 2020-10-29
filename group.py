@@ -2,5 +2,7 @@
 
 # Your code to go here...
 
-my_group =room 30
-group members are  Yohn and Yewen
+Yohn = {"name":"Yohn", "age":25,"Jobs":"Phd","Acquaintances":{"Yewen":"Friend"}}
+Yewen={"name":"Yewen", "age":22,"Jobs":"student","Acquaintances":{"Yohn":"Friend","Alice":"Flatmate"}} 
+
+my_group =
