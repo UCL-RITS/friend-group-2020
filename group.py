@@ -71,25 +71,26 @@ group = {
 [print(member['age']) for member_name, member in group.items()]
 
 # 1. Max age of people in the group 
-ages = []
-[ages.append(member['age']) for member_name, member in group.items()]
-print("Maximum age of group: ", max(ages))
+#Not proper comprehensions --> Comprehensions make a list already 
+#ages = []
+#[ages.append(member['age']) for member_name, member in group.items()]
+
+#Making use of proper comprehensions
+ages = [person["age"] for person in group.values()]
+print("Maximum age of group: ", max(ages)) 
 
 # 2. Average (mean) number of relations among members of the group 
-no_relations = []
-[no_relations.append(len(member['relations'])) for member_name, member in group.items()]
+no_relations = [len(member['relations']) for member_name, member in group.items()]
 avg_relations = sum(no_relations) / len(no_relations)
 print("Average number of relations: " , avg_relations)
 
 # 3. The maximum age of people in the group that have at least one relation 
-ages_1relation = []
-[ages_1relation.append(member['age']) for member_name, member in group.items() if len(member['relations']) > 0 ]
+ages_1relation = [member['age'] for member_name, member in group.items() if len(member['relations']) > 0 ]
 print("Max age of people in the group that have at least one relation: ", max(ages_1relation))
 
 #4. Maximum age of people in the group that have at least one friend 
 print('friend' in group['Jill']['relations'].values()) #Test if friend is in relations.values
-ages_wfriends = [] 
-[ages_wfriends.append(member['age']) for member_name, member in group.items() if ('friend' in member['relations'].values())]
+ages_wfriends = [member['age'] for member_name, member in group.items() if ('friend' in member['relations'].values())]
 print('Maximum age of people w/at least one friend: ', max(ages_wfriends))
 
 """ Working with JSON files """ 
@@ -102,15 +103,14 @@ with open('group.json', 'w') as json_file:
     json_format = json.dumps(group, indent = 3)
 
     #Writes json formatted text to the json file
-    json_file.write(json_format)
-
+    json_file.write(json_format) #or could've done: json_file.write(json.dumps(group, indent =3 )
 #Reading json file
 with open('group.json', 'r') as json_file_read:
     string_data = json_file_read.read()
-print(string_data)
+#print(string_data)
 
 # Turning the read data into json format 
 group_read = json.loads(string_data)
 
 #Access jill contents 
-print(group_read['Jill'])
+#print(group_read['Jill'])
