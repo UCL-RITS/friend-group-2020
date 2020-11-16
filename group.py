@@ -14,5 +14,9 @@ my group = {
         'Job': 'student'
         'partner': ['Kaiyuan Hu', 'maochun xu', 'Yuzhe Ren']
     }
+    'Maochun Xu' : { 'Age': '22', 
+                    'Job': 'student', 
+                    'partner': [' Congjun Xie', 'Yuzhen Ren', 'Kaiyuan Hu']
+    }
 }
 
