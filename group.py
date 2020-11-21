@@ -1,5 +1,44 @@
-"""An example of how to represent a group of acquaintances in Python."""
+# Using the example code from the lecture
 
-# Your code to go here...
+group = {
+    "Jill": {
+        "age": 26,
+        "job": "biologist",
+        "relations": {
+            "Zalika": "friend",
+            "John": "partner"
+        }
+    },
+    "Zalika": {
+        "age": 28,
+        "job": "artist",
+        "relations": {
+            "Jill": "friend"
+        }
+    },
+    "John": {
+        "age": 27,
+        "job": "writer",
+        "relations": {
+            "Jill": "partner"
+        }
+    },
+    "Nash": {
+        "age": 34,
+        "job": "chef",
+        "relations": {
+            "John": "cousin",
+            "Zalika": "landlord"
+        }
+    }
+}
 
-my_group =
+def mean(data):
+    """Compute the mean of a non-empty list of numbers."""
+    return sum(data) / len(data)
+
+
+print(max(person["age"] for person in group.values()))
+print(mean([len(person["relations"]) for person in group.values()]))
+print(max(person["age"] for person in group.values() if person["relations"]))
+print(max(person["age"] for person in group.values() if "friend" in person["relations"].values()))
