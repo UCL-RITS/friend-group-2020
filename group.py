@@ -2,6 +2,8 @@
 
 # Your code to go here...
 
+import json
+
 my_group = {
     
 "Jill" : 
@@ -45,7 +47,7 @@ print(f"Relationship between Jill and John is: {my_group['Jill']['relations']['J
 
 #return max age of group
 ages = [my_group[i]['age'] for i in my_group.keys()]
-print(f"The maximum age of this group of people is: {max(ages)}") #return max age of group
+print(f"The maximum age of this group of people is: {max(ages)}") 
 
 #return mean number of relations in group
 rels = [len(my_group[i]['relations']) for i in my_group.keys()]
@@ -59,9 +61,18 @@ print(f"The maximum age of people in this group that have at lease one relation 
 ages_friends = [my_group[i]['age'] for i in my_group.keys() if 'friend' in my_group[i]['relations'].values()]
 print(f"The maximum age of people in this group that have at lease one friend is: {max(ages_friends)}")
 
-#the sample solution, note use of i[age]
-""" print(max(person["age"] for person in group.values()))  # 34
-print(mean([len(person["relations"]) for person in group.values()]))  # 1.5
-print(max(person["age"] for person in group.values() if person["relations"]))  # 34
-print(max(person["age"] for person in group.values() if "friend" in person["relations"].values()))  # 28 """
+
+
+#JSON
+
+#write
+with open('groupdata.json' ,'w') as jsonfile:
+    json.dump(my_group, jsonfile, indent=3)
+
+#load
+with open('groupdata.json' ,'r') as loadedjsonfile:
+    json.load(loadedjsonfile)
+print(loadedjsonfile)
+
+
 

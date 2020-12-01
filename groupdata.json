@@ -1,0 +1,37 @@
+{
+   "Jill": {
+      "job": "Biologist",
+      "age": "26",
+      "relations": {
+         "Zalika": "friend",
+         "John": "Partner"
+      }
+   },
+   "Zalika": {
+      "job": "artist",
+      "age": "28",
+      "relations": {
+         "Jill": "friend"
+      }
+   },
+   "John": {
+      "job": "writer",
+      "age": "27",
+      "relations": {
+         "Jill": "Partner"
+      }
+   },
+   "Nash": {
+      "job": "chef",
+      "age": "34",
+      "relations": {
+         "Zalika": "landlord",
+         "John": "cousin"
+      }
+   },
+   "Richard": {
+      "job": "writer",
+      "age": "53",
+      "relations": {}
+   }
+}
