@@ -71,5 +71,14 @@ print(max(person['age'] for person in my_group.values() if person['connections']
 # max age of people in group with min 1 friend
 print(max(person['age'] for person in my_group.values() if 'friend' in person['connections'].values())) #28
 
+## saving group dictionary as JSON file
 
+import json
 
+with open('group.json', 'w') as json_group_out:
+    json_group_out.write(json.dumps(my_group))
+
+with open('group.json') as json_group_in:
+    group_again = json.load(json_group_in)
+
+print(group_again)
