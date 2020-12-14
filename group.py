@@ -53,3 +53,23 @@ my_group = {
         }
     }
 }
+
+
+# function to compute mean of non-empty list of numbers
+def mean(data):
+    return sum(data)/len(data)
+
+# max age of people in group
+print(max(person['age'] for person in my_group.values()))   #34
+
+# average number of relations among members of the group
+print(mean([len(person['connections'])for person in my_group.values()]))    #1.75
+
+# max age of people in the group that have min 1 relation
+print(max(person['age'] for person in my_group.values() if person['connections']))  #34
+
+# max age of people in group with min 1 friend
+print(max(person['age'] for person in my_group.values() if 'friend' in person['connections'].values())) #28
+
+
+
