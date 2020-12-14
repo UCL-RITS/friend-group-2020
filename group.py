@@ -20,34 +20,27 @@
 my_group = {
     'Jill': {
         'age': 26,
-        'job': ['biologist'],
+        'job': 'biologist',
         'connections': {
-            'friends': ['Zalika'],
-            'partner': ['John'],
-            'cousins': [],
-            'landlord_of': []
+            'Zalika': 'friend',
+            'John': 'partner',
         }
     },
 
     'Zalika': {
         'age': 28,
-        'job': ['artist'],
+        'job': 'artist',
         'connections': {
-            'friends': ['Jill'],
-            'partner': [],
-            'cousins': [],
-            'landlord_of': []
+            'Jill': 'friend'
         }
     },
 
     'John': {
         'age': 27,
-        'job': ['writer'],
+        'job': 'writer',
         'connections': {
-            'friends': [],
-            'parter': ['Jill'],
-            'cousins': ['Nash'],
-            'landlord_of': []
+            'Jill': 'partner',
+            'Nash': 'cousin'
         }
     },
 
@@ -55,10 +48,8 @@ my_group = {
         'age': 34,
         'job': 'chef',
         'connections': {
-            'friends': [],
-            'parter': [],
-            'cousins': ['John'],
-            'landlord_of': ['Zalika']
+            'John': 'cousin',
+            'Zalika': 'landord'
         }
     }
 }
